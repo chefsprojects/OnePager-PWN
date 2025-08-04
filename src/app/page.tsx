@@ -62,7 +62,7 @@ export default function HomePage() {
             <p style={{ marginBottom: '1.8rem', fontSize: '0.9rem', lineHeight: '1.3' }}>
               De AI Act is Europese wetgeving die kaders stelt voor het veilig en verantwoord gebruik van AI-systemen. 
               Deze wet helpt ons om risico&apos;s te beheersen en te zorgen voor een veilige, verantwoorde en ethische inzet van AI binnen PWN. 
-              Volgens de AI Act is AI-geletterdheid een wettelijke plicht voor alle organisaties die AI gebruiken, en moeten alle AI-systemen geregistreerd worden.
+              Verder stelt de AI Act dat AI-geletterdheid een wettelijke plicht is voor alle organisaties die AI gebruiken, en dat alle AI-systemen geregistreerd moeten worden.
             </p>
           </div>
           
@@ -155,16 +155,16 @@ export default function HomePage() {
                 </div>
 
                 <h3 style={{ fontWeight: 'bold', color: pwnColors.blue, marginBottom: '0.6rem', fontSize: '0.8rem' }}>
-                  Voor wie is de AI Act belangrijk?
+                  Wat zijn de belangrijkste verplichtingen?
                 </h3>
                 <p style={{ marginBottom: '0.6rem' }}>
-                  AI-geletterdheid is verplicht sinds februari 2025 voor alle organisaties die AI gebruiken of ontwikkelen. 
-                  Het vereiste kennisniveau hangt af van:
+                  De AI Act stelt meerdere verplichtingen voor organisaties die AI gebruiken. De belangrijkste zijn:
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1rem', marginBottom: '1rem', lineHeight: '1.4' }}>
-                  <li style={{ marginBottom: '0.3rem' }}>De rol van de medewerker</li>
-                  <li style={{ marginBottom: '0.3rem' }}>Het type AI-systeem</li>
-                  <li style={{ marginBottom: '0.3rem' }}>De impact op besluitvorming</li>
+                  <li style={{ marginBottom: '0.3rem' }}><strong>Registratie van AI-systemen:</strong> Alleen hoog-risico AI-systemen moeten geregistreerd worden in de EU-database (vanaf augustus 2026)</li>
+                  <li style={{ marginBottom: '0.3rem' }}><strong>AI-geletterdheid:</strong> Verplicht sinds februari 2025 voor alle medewerkers</li>
+                  <li style={{ marginBottom: '0.3rem' }}><strong>Risicobeoordeling:</strong> Vooral voor hoog-risico AI-systemen</li>
+                  <li style={{ marginBottom: '0.3rem' }}><strong>Transparantie:</strong> Gebruikers informeren over AI-gebruik</li>
                 </ol>
 
                 <div style={{ 
@@ -175,8 +175,8 @@ export default function HomePage() {
                   borderRadius: '3px',
                   borderLeft: '3px solid ' + pwnColors.lightBlue
                 }}>
-                  Goede omgang met AI is belangrijk voor iedereen, ongeacht functie, om te begrijpen wat AI betekent 
-                  voor het eigen werk en welke regels gelden.
+                  Voor PWN als drinkwaterbedrijf zijn deze verplichtingen extra belangrijk omdat we onder kritieke infrastructuur vallen. 
+                  Als publieke instantie moeten we hoog-risico AI-systemen registreren voordat we ze in gebruik nemen.
                 </div>
               </div>
             </div>
