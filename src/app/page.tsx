@@ -158,7 +158,7 @@ export default function HomePage() {
                   Voor wie is de AI Act belangrijk?
                 </h3>
                 <p style={{ marginBottom: '0.6rem' }}>
-                  AI-geletterdheid wordt verplicht vanaf 2025 voor alle organisaties die AI gebruiken of ontwikkelen. 
+                  AI-geletterdheid is verplicht sinds februari 2025 voor alle organisaties die AI gebruiken of ontwikkelen. 
                   Het vereiste kennisniveau hangt af van:
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1rem', marginBottom: '1rem', lineHeight: '1.4' }}>
