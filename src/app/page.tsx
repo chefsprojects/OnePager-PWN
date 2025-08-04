@@ -1,35 +1,9 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 
 export default function HomePage() {
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const calculateScale = () => {
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      
-      // Goede base dimensions voor mooie scaling
-      const baseWidth = 1400;
-      const baseHeight = 900;
-      
-      // Gebruik het meeste van het scherm
-      const scaleX = (viewportWidth * 0.95) / baseWidth;
-      const scaleY = (viewportHeight * 0.90) / baseHeight;
-      
-      // Gebruik de kleinste schaalfactor
-      const newScale = Math.min(scaleX, scaleY);
-      
-      setScale(Math.max(newScale, 0.4)); // Minimum scale
-    };
-
-    calculateScale();
-    window.addEventListener('resize', calculateScale);
-    
-    return () => window.removeEventListener('resize', calculateScale);
-  }, []);
 
   const pwnColors = {
     blue: '#0077C8',
@@ -42,32 +16,17 @@ export default function HomePage() {
     <div style={{
       width: '100vw',
       height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#f5f5f5',
-      padding: '20px',
-      boxSizing: 'border-box',
+      backgroundColor: pwnColors.white,
+      fontFamily: "'Open Sans', sans-serif",
+      color: '#333',
+      lineHeight: '1.4',
       position: 'fixed',
       top: 0,
-      left: 0
+      left: 0,
+      overflow: 'auto',
+      padding: '2rem',
+      boxSizing: 'border-box'
     }}>
-      <div style={{
-        width: '1400px',
-        height: '900px',
-        transform: `scale(${scale})`,
-        transformOrigin: 'center center',
-        overflow: 'visible',
-        position: 'relative',
-        padding: '3rem',
-        backgroundColor: pwnColors.white,
-        fontFamily: "'Open Sans', sans-serif",
-        color: '#333',
-        lineHeight: '1.4',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-        borderRadius: '12px',
-        boxSizing: 'border-box'
-      }}>
         {/* PWN Logo links onder */}
         <div style={{
           position: 'absolute',
@@ -499,7 +458,7 @@ export default function HomePage() {
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1rem', marginBottom: '1rem', fontSize: '0.7rem', lineHeight: '1.4' }}>
                   <li style={{ marginBottom: '0.3rem' }}>Identificeer AI-systemen op je afdeling</li>
                   <li style={{ marginBottom: '0.3rem' }}>Bepaal wie verantwoordelijk is voor elk AI-systeem</li>
-                  <li style={{ marginBottom: '0.3rem' }}>Stuur jouw lijst vòòr 30 juli 2025 in via het Forms formulier: <span style={{ color: pwnColors.blue, fontWeight: 'bold' }}>AI Registratie</span></li>
+                  <li style={{ marginBottom: '0.3rem' }}>Stuur jouw lijst in via het Forms formulier: <span style={{ color: pwnColors.blue, fontWeight: 'bold' }}>AI Registratie</span></li>
                 </ol>
 
                 <h3 style={{ fontWeight: 'bold', color: pwnColors.blue, marginBottom: '0.5rem', fontSize: '0.8rem' }}>
@@ -524,7 +483,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   )
 }
