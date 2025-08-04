@@ -442,6 +442,34 @@ export default function HomePage() {
                       flex: 1,
                       position: 'relative',
                       cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      const tooltip = e.currentTarget.querySelector('.timeline-tooltip') as HTMLElement;
+                      if (tooltip) {
+                        tooltip.style.display = 'block';
+                        // Adjust position if tooltip would go off-screen
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        if (rect.left + tooltipRect.width/2 > window.innerWidth - 20) {
+                          tooltip.style.left = 'auto';
+                          tooltip.style.right = '0';
+                          tooltip.style.transform = 'none';
+                        } else if (rect.left - tooltipRect.width/2 < 20) {
+                          tooltip.style.left = '0';
+                          tooltip.style.right = 'auto';  
+                          tooltip.style.transform = 'none';
+                        }
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const tooltip = e.currentTarget.querySelector('.timeline-tooltip') as HTMLElement;
+                      if (tooltip) {
+                        tooltip.style.display = 'none';
+                        // Reset positioning
+                        tooltip.style.left = '50%';
+                        tooltip.style.right = 'auto';
+                        tooltip.style.transform = 'translateX(-50%)';
+                      }
                     }}>
                       <div style={{
                         width: '0.8rem',
@@ -457,6 +485,65 @@ export default function HomePage() {
                       }}></div>
                       <span style={{ fontSize: '0.6rem', fontWeight: 'bold', textAlign: 'center' }}>{item.date}</span>
                       <span style={{ fontSize: '0.5rem', textAlign: 'center' }}>{item.desc}</span>
+                      
+                      {/* Tooltip */}
+                      <div className="timeline-tooltip" style={{
+                        display: 'none',
+                        position: 'absolute',
+                        top: '60px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: 'white',
+                        border: `2px solid ${pwnColors.blue}`,
+                        borderRadius: '6px',
+                        padding: '0.8rem',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                        zIndex: 9999,
+                        width: '280px',
+                        fontSize: '0.65rem',
+                        lineHeight: '1.3'
+                      }}>
+                        {/* Arrow pointing up */}
+                        <div style={{
+                          position: 'absolute',
+                          top: '-8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: 0,
+                          height: 0,
+                          borderLeft: '8px solid transparent',
+                          borderRight: '8px solid transparent',
+                          borderBottom: `8px solid ${pwnColors.blue}`
+                        }}></div>
+                        
+                        <div style={{ 
+                          fontWeight: 'bold', 
+                          color: pwnColors.blue, 
+                          marginBottom: '0.4rem', 
+                          fontSize: '0.7rem',
+                          borderBottom: `1px solid ${pwnColors.lightBlue}`,
+                          paddingBottom: '0.3rem'
+                        }}>
+                          {item.title}
+                        </div>
+                        <div style={{ marginBottom: '0.5rem' }}>
+                          <strong>Wat verandert er:</strong><br />
+                          {item.details}
+                        </div>
+                        <div style={{ marginBottom: '0.5rem' }}>
+                          <strong>Wie wordt geraakt:</strong><br />
+                          {item.audience}
+                        </div>
+                        <div style={{ 
+                          backgroundColor: '#f8f9fa', 
+                          padding: '0.4rem', 
+                          borderRadius: '3px',
+                          border: `1px solid ${pwnColors.lightBlue}`
+                        }}>
+                          <strong style={{ color: pwnColors.blue }}>Actiepunten:</strong><br />
+                          {item.actions}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -500,7 +587,7 @@ export default function HomePage() {
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1rem', marginBottom: '1rem', fontSize: '0.7rem', lineHeight: '1.4' }}>
                   <li style={{ marginBottom: '0.3rem' }}>Identificeer AI-systemen op je afdeling</li>
                   <li style={{ marginBottom: '0.3rem' }}>Bepaal wie verantwoordelijk is voor elk AI-systeem</li>
-                  <li style={{ marginBottom: '0.3rem' }}>Stuur jouw lijst in via het Forms formulier: <span style={{ color: pwnColors.blue, fontWeight: 'bold' }}>AI Registratie</span></li>
+                  <li style={{ marginBottom: '0.3rem' }}>Registreer jouw AI systeem via het volgende formulier: <a href="https://pwnkia.sharepoint.com/sites/wrk-ai" target="_blank" rel="noopener noreferrer" style={{ color: pwnColors.blue, fontWeight: 'bold', textDecoration: 'underline' }}>AI Registratie</a></li>
                 </ol>
 
                 <h3 style={{ fontWeight: 'bold', color: pwnColors.blue, marginBottom: '0.5rem', fontSize: '0.8rem' }}>
