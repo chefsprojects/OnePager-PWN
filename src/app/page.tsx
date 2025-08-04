@@ -102,7 +102,7 @@ export default function HomePage() {
             </h1>
             <p style={{ marginBottom: '1.8rem', fontSize: '0.9rem', lineHeight: '1.3' }}>
               De AI Act is Europese wetgeving die kaders stelt voor het veilig en verantwoord gebruik van AI-systemen. 
-              Deze wet helpt ons om risico's te beheersen en te zorgen voor een veilige, verantwoorde en ethische inzet van AI binnen PWN. 
+              Deze wet helpt ons om risico&apos;s te beheersen en te zorgen voor een veilige, verantwoorde en ethische inzet van AI binnen PWN. 
               Volgens de AI Act is AI-geletterdheid een wettelijke plicht voor alle organisaties die AI gebruiken, en moeten alle AI-systemen geregistreerd worden.
             </p>
           </div>
