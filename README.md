@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OnePager Project
 
-## Getting Started
+Een moderne, professionele OnePager website gebouwd met Next.js en shadcn/ui.
 
-First, run the development server:
+## 🚀 Features
+
+- **16:9 Aspect Ratio**: Alle secties zijn geoptimaliseerd voor 16:9 formaat
+- **Moderne UI**: Gebruik van shadcn/ui componenten voor een professionele uitstraling
+- **Responsive Design**: Perfect op alle apparaten en schermformaten
+- **TypeScript**: Volledig getypeerd voor betere ontwikkelervaring
+- **Tailwind CSS**: Moderne styling met utility-first CSS
+
+## 🛠️ Technologieën
+
+- **Next.js 14**: React framework met App Router
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: Moderne UI componenten
+- **Framer Motion**: Animaties (optioneel)
+- **Lucide React**: Icon library
+
+## 📁 Project Structuur
+
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles met shadcn/ui thema
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Homepage component
+├── components/
+│   └── ui/                  # shadcn/ui componenten
+│       ├── button.tsx       # Button component
+│       └── card.tsx         # Card componenten
+└── lib/
+    └── utils.ts             # Utility functies
+```
+
+## 🚀 Development
+
+### Installatie
+
+```bash
+npm install
+```
+
+### Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in je browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Kleuren aanpassen
 
-## Deploy on Vercel
+De kleuren kunnen aangepast worden in `src/app/globals.css` bij de CSS variabelen.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Componenten toevoegen
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Nieuwe shadcn/ui componenten kunnen toegevoegd worden in `src/components/ui/`.
+
+## 📱 Responsive Design
+
+De website is volledig responsive en werkt perfect op:
+- Desktop (16:9 aspect ratio)
+- Tablet
+- Mobile
+
+## 🔧 Configuratie
+
+- **Tailwind**: `tailwind.config.ts`
+- **TypeScript**: `tsconfig.json`
+- **ESLint**: `eslint.config.mjs`
+
+## 📄 Licentie
+
+MIT License - zie LICENSE bestand voor details.
+
