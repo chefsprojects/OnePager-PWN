@@ -15,14 +15,11 @@ export default function HomePage() {
   return (
     <div style={{
       width: '100vw',
-      height: '100vh',
+      minHeight: '100vh',
       backgroundColor: pwnColors.white,
       fontFamily: "'Open Sans', sans-serif",
       color: '#333',
       lineHeight: '1.4',
-      position: 'fixed',
-      top: 0,
-      left: 0,
       overflow: 'auto',
       padding: '2rem',
       boxSizing: 'border-box'
@@ -71,14 +68,13 @@ export default function HomePage() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gridGap: '2rem',
-            height: 'calc(100% - 200px)',
             alignItems: 'start',
             position: 'relative',
             zIndex: 1,
             padding: '0 1rem',
             maxWidth: '100%',
-            overflow: 'hidden',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            minHeight: '0'
           }}>
             {/* Kolom 1 - Wat is AI? */}
             <div style={{
@@ -88,8 +84,6 @@ export default function HomePage() {
               boxShadow: '0 3px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
               flexDirection: 'column',
-              height: '100%',
-              overflow: 'auto',
               maxWidth: '100%',
               boxSizing: 'border-box'
             }}>
@@ -104,8 +98,6 @@ export default function HomePage() {
                 Wat is AI?
               </h2>
               <div style={{
-                overflowY: 'auto',
-                flex: 1,
                 paddingRight: '0.3rem',
                 fontSize: '0.75rem',
                 lineHeight: '1.3'
@@ -189,8 +181,6 @@ export default function HomePage() {
               boxShadow: '0 3px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
               flexDirection: 'column',
-              height: '100%',
-              overflow: 'auto',
               maxWidth: '100%',
               boxSizing: 'border-box'
             }}>
@@ -205,8 +195,6 @@ export default function HomePage() {
                 Risiconiveaus volgens AI Act
               </h2>
               <div style={{
-                overflowY: 'auto',
-                flex: 1,
                 paddingRight: '0.3rem',
                 fontSize: '0.72rem',
                 lineHeight: '1.3'
@@ -355,10 +343,9 @@ export default function HomePage() {
               boxShadow: '0 3px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
               flexDirection: 'column',
-              height: '100%',
-              overflow: 'auto',
               maxWidth: '100%',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              position: 'relative'
             }}>
               <h2 style={{
                 color: pwnColors.blue,
@@ -371,13 +358,11 @@ export default function HomePage() {
                 Tijdlijn & Acties
               </h2>
               <div style={{
-                overflowY: 'auto',
-                flex: 1,
                 paddingRight: '0.3rem',
                 fontSize: '0.72rem',
                 lineHeight: '1.3'
               }}>
-                {/* Timeline */}
+                {/* Interactive Timeline */}
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -395,26 +380,170 @@ export default function HomePage() {
                     zIndex: -1
                   }}></div>
                   {[
-                    { year: '2024', desc: 'Start' },
-                    { year: 'Feb 2025', desc: 'Eerste verplichtingen' },
-                    { year: '2025-2026', desc: 'Systeem implementatie' },
-                    { year: '2027', desc: 'Volledige naleving' }
+                    { 
+                      date: '1 aug 2024', 
+                      desc: 'Start', 
+                      title: 'AI-Act van kracht - PWN voorbereidingen',
+                      details: 'AI-Act treedt formeel in werking. Voor PWN betekent dit het begin van een periode om alle AI-toepassingen in kaart te brengen.',
+                      audience: 'Alle PWN medewerkers die AI gebruiken',
+                      actions: 'Inventariseer alle AI-tools op uw afdeling (Copilot, chatbots, analysetools, voorspellingsmodellen voor waterkwaliteit, etc.)',
+                      status: 'completed'
+                    },
+                    { 
+                      date: '2 feb 2025', 
+                      desc: 'Eerste verplichtingen', 
+                      title: 'AI-literacy training verplicht voor PWN',
+                      details: 'Als publieke organisatie moet PWN alle medewerkers trainen in AI-geletterdheid. Verboden AI-praktijken zoals social scoring worden illegaal.',
+                      audience: 'Alle PWN medewerkers',
+                      actions: 'Volg de verplichte AI-literacy training. PWN richt trainingen in over verantwoord AI-gebruik in watervoorziening.',
+                      status: 'active'
+                    },
+                    { 
+                      date: '2 aug 2025', 
+                      desc: 'GPAI-regels', 
+                      title: 'Generative AI governance - beperkte impact PWN',
+                      details: 'Regels voor grote AI-modellen zoals ChatGPT. Voor PWN vooral relevant bij gebruik van externe AI-diensten.',
+                      audience: 'PWN afdelingen die externe AI-diensten gebruiken',
+                      actions: 'Check contracten met AI-leveranciers. Zorg dat zij voldoen aan nieuwe transparantie-eisen over trainingsdata.',
+                      status: 'upcoming'
+                    },
+                    { 
+                      date: '2 aug 2026', 
+                      desc: 'High-risk systemen', 
+                      title: 'Kritieke infrastructuur - hoofdfocus PWN',
+                      details: 'AI-systemen in kritieke infrastructuur (drinkwatervoorziening) worden high-risk. PWN moet deze registreren in EU-database en impact-assessments uitvoeren.',
+                      audience: 'PWN als drinkwatervoorziener en kritieke infrastructuur',
+                      actions: 'Identificeer AI in pompstations, waterzuivering en distributie. Stel risicobeheersysteem op. Bereid EU-database registratie voor.',
+                      status: 'upcoming'
+                    },
+                    { 
+                      date: '2 aug 2027', 
+                      desc: 'Volledige naleving', 
+                      title: 'Alle PWN AI-systemen compliant',
+                      details: 'Ook oudere AI-systemen en AI in gereguleerde waterbehandelingsapparatuur moeten nu voldoen aan alle AI-Act vereisten.',
+                      audience: 'PWN technische diensten en IT',
+                      actions: 'Upgrade oudere voorspellingsmodellen en sensorsystemen. Integreer AI-compliance in bestaande waterkwaliteit procedures.',
+                      status: 'upcoming'
+                    },
+                    { 
+                      date: '31 dec 2030', 
+                      desc: 'EU-systemen', 
+                      title: 'EU-brede standaarden - lange termijn PWN',
+                      details: 'Harmonisatie van AI-standaarden in Europese infrastructuur. Minder direct relevant voor PWN watervoorziening.',
+                      audience: 'PWN strategische planning',
+                      actions: 'Monitor ontwikkelingen in EU-brede waterinfrastructuur AI-standaarden voor toekomstige samenwerking.',
+                      status: 'future'
+                    }
                   ].map((item, index) => (
                     <div key={index} style={{
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      flex: 1
+                      flex: 1,
+                      position: 'relative',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                      if (tooltip) {
+                        tooltip.style.display = 'block';
+                        // Adjust position if tooltip would go off-screen
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        if (rect.left + tooltipRect.width/2 > window.innerWidth - 20) {
+                          tooltip.style.left = 'auto';
+                          tooltip.style.right = '0';
+                          tooltip.style.transform = 'none';
+                        } else if (rect.left - tooltipRect.width/2 < 20) {
+                          tooltip.style.left = '0';
+                          tooltip.style.right = 'auto';  
+                          tooltip.style.transform = 'none';
+                        }
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                      if (tooltip) {
+                        tooltip.style.display = 'none';
+                        // Reset positioning
+                        tooltip.style.left = '50%';
+                        tooltip.style.right = 'auto';
+                        tooltip.style.transform = 'translateX(-50%)';
+                      }
                     }}>
                       <div style={{
-                        width: '0.7rem',
-                        height: '0.7rem',
+                        width: '0.8rem',
+                        height: '0.8rem',
                         borderRadius: '50%',
-                        backgroundColor: pwnColors.blue,
-                        marginBottom: '0.4rem'
+                        backgroundColor: item.status === 'completed' ? pwnColors.green : 
+                                       item.status === 'active' ? '#FF851B' : 
+                                       item.status === 'future' ? '#888' : pwnColors.blue,
+                        marginBottom: '0.4rem',
+                        border: item.status === 'active' ? '2px solid #fff' : 'none',
+                        boxShadow: item.status === 'active' ? '0 0 0 2px #FF851B' : 'none',
+                        transition: 'all 0.2s ease'
                       }}></div>
-                      <span style={{ fontSize: '0.65rem', fontWeight: 'bold', textAlign: 'center' }}>{item.year}</span>
-                      <span style={{ fontSize: '0.55rem', textAlign: 'center' }}>{item.desc}</span>
+                      <span style={{ fontSize: '0.6rem', fontWeight: 'bold', textAlign: 'center' }}>{item.date}</span>
+                      <span style={{ fontSize: '0.5rem', textAlign: 'center' }}>{item.desc}</span>
+                      
+                      {/* Tooltip */}
+                      <div className="timeline-tooltip" style={{
+                        display: 'none',
+                        position: 'absolute',
+                        top: '60px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: 'white',
+                        border: `2px solid ${pwnColors.blue}`,
+                        borderRadius: '6px',
+                        padding: '0.8rem',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                        zIndex: 9999,
+                        width: '280px',
+                        fontSize: '0.65rem',
+                        lineHeight: '1.3'
+                      }}>
+                        {/* Arrow pointing up */}
+                        <div style={{
+                          position: 'absolute',
+                          top: '-8px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: 0,
+                          height: 0,
+                          borderLeft: '8px solid transparent',
+                          borderRight: '8px solid transparent',
+                          borderBottom: `8px solid ${pwnColors.blue}`
+                        }}></div>
+                        
+                        <div style={{ 
+                          fontWeight: 'bold', 
+                          color: pwnColors.blue, 
+                          marginBottom: '0.4rem', 
+                          fontSize: '0.7rem',
+                          borderBottom: `1px solid ${pwnColors.lightBlue}`,
+                          paddingBottom: '0.3rem'
+                        }}>
+                          {item.title}
+                        </div>
+                        <div style={{ marginBottom: '0.5rem' }}>
+                          <strong>Wat verandert er:</strong><br />
+                          {item.details}
+                        </div>
+                        <div style={{ marginBottom: '0.5rem' }}>
+                          <strong>Wie wordt geraakt:</strong><br />
+                          {item.audience}
+                        </div>
+                        <div style={{ 
+                          backgroundColor: '#f8f9fa', 
+                          padding: '0.4rem', 
+                          borderRadius: '3px',
+                          border: `1px solid ${pwnColors.lightBlue}`
+                        }}>
+                          <strong style={{ color: pwnColors.blue }}>Actiepunten:</strong><br />
+                          {item.actions}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
